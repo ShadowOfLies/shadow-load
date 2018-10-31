@@ -17,7 +17,23 @@ public abstract class LoadWorker implements Ladening {
 
     private final double load;
 
+    private LoadState state;
+
     public LoadWorker(double load) {
+        this.state = LoadState.IDLE;
         this.load = load;
+    }
+
+    public double getLoad() {
+        return load;
+    }
+
+    protected void setState(LoadState state) {
+        this.state = state;
+    }
+
+    @Override
+    public LoadState getState() {
+        return this.state;
     }
 }

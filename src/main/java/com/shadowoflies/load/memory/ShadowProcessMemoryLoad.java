@@ -1,8 +1,12 @@
 /**
  * Created on 2018/10/31, 08:37:43.
  *
- * Copyright(c) 2018 FNB Merchant Services.  All Rights Reserved.
- * This software is the proprietary information of FNB.
+ * GNU GENERAL PUBLIC LICENSE
+ * Version 3, 29 June 2007
+ *
+ * Copyright (C) 2007 Free Software Foundation, Inc. <https://fsf.org/>
+ * Everyone is permitted to copy and distribute verbatim copies of this license
+ * document, but changing it is not allowed.
  */
 package com.shadowoflies.load.memory;
 

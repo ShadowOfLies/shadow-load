@@ -10,6 +10,8 @@
  */
 package com.shadowoflies.load.system;
 
+import com.shadowoflies.load.cpu.ShadowMaxedCpuLoad;
+import com.shadowoflies.load.cpu.ShadowSystemCpuLoad;
 import com.sun.management.OperatingSystemMXBean;
 import java.lang.management.ManagementFactory;
 
@@ -21,6 +23,47 @@ public class ShadowSystem {
     private static boolean stopped = false;
 
     public static void main(String... args) throws InterruptedException {
+        ShadowSystemCpuLoad sysCpuLoad;
+
+        sysCpuLoad = new ShadowSystemCpuLoad(65D);
+        System.out.println("Starting monitor...");
+        monitor();
+
+        System.out.println("Requesting load generation...");
+        sysCpuLoad.laden();
+
+        System.out.println("Give some time to allow the load to stabilize...");
+        Thread.sleep(30000L);
+
+        System.out.println("Waiting for 30 seconds to monitor load...");
+        Thread.sleep(30000L);
+
+        System.out.println("Requesting load generation stop...");
+        sysCpuLoad.unladen();
+
+        System.out.println("Done...");
+    }
+
+    private static void maxoutTest() throws InterruptedException {
+        ShadowMaxedCpuLoad maxedCpuLoad;
+
+        maxedCpuLoad = ShadowMaxedCpuLoad.getInstance();
+        System.out.println("Starting monitor...");
+        monitor();
+
+        System.out.println("Requesting load generation...");
+        maxedCpuLoad.laden();
+
+        System.out.println("Waiting for 30 seconds to monitor load...");
+        Thread.sleep(30000L);
+
+        System.out.println("Requesting load generation stop...");
+        maxedCpuLoad.unladen();
+
+        System.out.println("Done...");
+    }
+
+    private static void simpleTest() throws InterruptedException {
         int availableProcessors = Runtime.getRuntime().availableProcessors();
 
         System.out.println("GBO - Available Processors : " + availableProcessors);
@@ -79,7 +122,11 @@ public class ShadowSystem {
         }).start();
     }
 
-    public ShadowSystem() {}
+    private final OperatingSystemMXBean sysBean;
+
+    public ShadowSystem() {
+        this.sysBean = ManagementFactory.getPlatformMXBean(OperatingSystemMXBean.class);
+    }
 
     public int cores() {
         return Runtime.getRuntime().availableProcessors();
@@ -87,5 +134,9 @@ public class ShadowSystem {
 
     public int processorThreads() {
         return Runtime.getRuntime().availableProcessors();
+    }
+
+    public double systemCpuLoad() {
+        return this.sysBean.getSystemCpuLoad();
     }
 }

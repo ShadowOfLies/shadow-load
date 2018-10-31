@@ -18,4 +18,6 @@ public interface Ladening {
     void laden();
 
     void unladen();
+
+    LoadState getState();
 }
