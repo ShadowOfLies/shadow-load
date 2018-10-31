@@ -1,5 +1,5 @@
 /**
- * Created on 30 Oct 2018, 8:26:03 PM
+ * Created on 2018/10/31, 08:36:15.
  *
  * GNU GENERAL PUBLIC LICENSE
  * Version 3, 29 June 2007
@@ -8,16 +8,11 @@
  * Everyone is permitted to copy and distribute verbatim copies of this license
  * document, but changing it is not allowed.
  */
-package com.shadowoflies.load;
+package com.shadowoflies.load.memory;
 
 /**
  * @author Gavin Boshoff
  */
-public abstract class LoadWorker implements Ladening {
+public class ShadowOutOfMemoryErrorMemoryLoad {
 
-    private final double load;
-
-    public LoadWorker(double load) {
-        this.load = load;
-    }
 }

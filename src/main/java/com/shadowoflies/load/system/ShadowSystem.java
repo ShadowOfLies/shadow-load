@@ -14,7 +14,6 @@ import com.sun.management.OperatingSystemMXBean;
 import java.lang.management.ManagementFactory;
 
 /**
- * @version 1
  * @author Gavin Boshoff
  */
 public class ShadowSystem {

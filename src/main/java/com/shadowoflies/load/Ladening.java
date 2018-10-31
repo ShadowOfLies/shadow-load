@@ -11,7 +11,6 @@
 package com.shadowoflies.load;
 
 /**
- * @version 1
  * @author Gavin Boshoff
  */
 public interface Ladening {

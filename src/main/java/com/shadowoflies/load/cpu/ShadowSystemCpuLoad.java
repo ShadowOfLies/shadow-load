@@ -8,15 +8,16 @@
  * Everyone is permitted to copy and distribute verbatim copies of this license
  * document, but changing it is not allowed.
  */
-package com.shadowoflies.load;
+package com.shadowoflies.load.cpu;
+
+import com.shadowoflies.load.LoadWorker;
 
 /**
- * @version 1
  * @author Gavin Boshoff
  */
-public class ShadowCpuLoad extends LoadWorker {
+public class ShadowSystemCpuLoad extends LoadWorker {
 
-    public ShadowCpuLoad(double load) {
+    public ShadowSystemCpuLoad(double load) {
         super(load);
     }
 
