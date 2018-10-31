@@ -1,9 +1,12 @@
 /**
  * Created on 30 Oct 2018, 8:28:35 PM
  *
- * Copyright(c) 2018 ShadowOfLies. All Rights Reserved.
- * The code from this class and all associated code, with the exception of third
- * party library code, is the proprietary information of ShadowOfLies.
+ * GNU GENERAL PUBLIC LICENSE
+ * Version 3, 29 June 2007
+ *
+ * Copyright (C) 2007 Free Software Foundation, Inc. <https://fsf.org/>
+ * Everyone is permitted to copy and distribute verbatim copies of this license
+ * document, but changing it is not allowed.
  */
 package com.shadowoflies.load;
 
